@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title> vy decorações</title>
+
+  <style>
+    :root {
+      --preto: #080808;
+      --cinza: #151515;
+      --rosa: #ff3998;
+      --rosa-claro: #ff9dce;
+      --branco: #ffffff;
+      --texto: #d5d5d5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: #050505;
+      border-bottom: 1px solid #39202e;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--rosa);
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a:hover {
+      color: var(--rosa);
+    }
+
+    .hero {
+      min-height: 470px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 35px;
+      padding: 55px 7%;
+      background: radial-gradient(
+        ellipse at top right,
+        #30101f 0%,
+        #080808 65%
+      );
+    }
+
+    .hero small,
+    .eyebrow {
+      color: var(--rosa);
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.12;
+      margin: 15px 0;
+    }
+
+    h1 span,
+    h2 span {
+      color: var(--rosa);
+    }
+
+    .hero p {
+      color: var(--texto);
+      margin-bottom: 25px;
+      max-width: 480px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--rosa);
+      box-shadow: 0 0 28px #ff39982b;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--rosa);
+      color: #fff;
+      padding: 13px 23px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #d91d78;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 65px 7%;
+      scroll-margin-top: 20px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: var(--texto);
+      margin: 0 auto 35px;
+      max-width: 650px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--cinza);
+      border: 1px solid #512039;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .card:hover {
+      border-color: var(--rosa);
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: var(--rosa-claro);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--texto);
+      font-size: 14px;
+    }
+
+    .gallery {
+      background: #101010;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #57213d;
+    }
+
+    .about {
+      text-align: center;
+      background: #0b0b0b;
+    }
+
+    .about p {
+      max-width: 720px;
+      color: var(--texto);
+      margin: 15px auto;
+    }
+
+    .contact {
+      text-align: center;
+      background: #170b12;
+    }
+
+    .contact p {
+      color: var(--texto);
+      margin: 12px 0 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid var(--rosa);
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--rosa);
+    }
+
+    @media (max-width: 760px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+      }
+
+      .hero-photo {
+        height: 280px;
+      }
+
+      section {
+        padding: 45px 6%;
+      }
+
+      .cards,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#inicio"> VY DECORAÇÕES ♡</a>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <small>DECORAÇÕES DE FESTAS</small>
+        <h1>Sua festa, <span>do seu jeito!</span></h1>
+
+        <p>
+          Transformamos momentos especiais em lembranças
+          inesquecíveis com decorações criativas e personalizadas.
+        </p>
+
+        <a class="button" href="#contato">
+          Solicite seu orçamento ♡
+        </a>
+      </div>
+
+      <img
+        class="hero-photo"
+        src="1000245354.jpg"
+        alt="Decoração de festa realizada pela nossa equipe">
+    </section>
+
+    <section id="servicos">
+      <h2 class="section-title">
+        Nossos <span>serviços</span>
+      </h2>
+
+      <p class="section-description">
+        Cada detalhe preparado com carinho para sua comemoração.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <img src="1000245112.jpg"
+               alt="Decoração de festa infantil">
+          <div class="card-content">
+            <h3>Festas infantis</h3>
+            <p>Decorações alegres para comemorar os momentos mais especiais.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="1000245114.jpg"
+               alt="Decoração de festa neon">
+          <div class="card-content">
+            <h3>Festas neon</h3>
+            <p>Cores vibrantes e muita personalidade para sua festa.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="1000245103.jpg"
+               alt="Decoração super elaborada ">
+          <div class="card-content">
+            <h3>Festas criativas</h3>
+            <p>Decorações para aniversários e outras comemorações.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <h2 class="section-title">
+        Nossa <span>galeria</span>
+      </h2>
+
+      <p class="section-description">
+        Um pouquinho dos trabalhos que já realizamos.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="1000245100.jpg" alt="Decoração de feta infantil">
+       <img src="1000245354.jpg" alt="Detalhes da decoração">
+        <img src="1000245116.jpg" alt="cliente satisfeita">
+        <img src="1000245104.jpg" alt="Festa infantil criativa ">
+        <img src="1000245112.jpg" alt="chá de bebê">
+        <img src="1000245114.jpg" alt="festa neon ">
+        <img src="1000245288.jpg" alt="cliente satisfeita"
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <h2 class="section-title">
+        Sobre <span>nós</span>
+      </h2>
+
+      <p>
+        Somos uma equipe apaixonada por decoração e por transformar
+        ideias em momentos especiais. Criamos ambientes personalizados
+        para que cada comemoração tenha seu próprio encanto.
+      </p>
+    </section>
+
+    <section class="contact" id="contato">
+      <h2 class="section-title">
+        Vamos planejar sua <span>festa?</span>
+      </h2>
+
+      <p>
+        Conte sua ideia para nós e solicite um orçamento.
+      </p>
+      <a class="button" id="whatsapp" href="#">
+        Falar pelo WhatsApp ♡
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p><span> VY Decorações ♡</span></p>
+    <p>© <span id="ano"></span> — Todos os direitos reservados. trabalhamos com contrato!
+    Aqui sua festa tem de tudo e do melhor!</p>
+    <p>Sonhos se tornam realidade!</p>
+  </footer>
+
+  <script>
+    // Troque pelo número comercial real: 55 + DDD + telefone.
+    const telefone = "55 11912180870";
+
+    const mensagem =
+      "Olá! Gostaria de solicitar um orçamento para uma festa.";
+
+    document.getElementById("whatsapp").href =
+      "https://wa.me/" + telefone +
+      "?text=" + encodeURIComponent(mensagem);
+
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
